@@ -52,3 +52,19 @@ function playRound(playerSelection, computerSelection) {
     );
   }
 }
+
+// Added a function to let user win if they win 5 rounds
+function game() {
+  for (let round = 1; round <= Infinity; round++) {
+    if (playerScore === 5) {
+      console.log("Congratulations! You won the game :)");
+      break;
+    } else if (computerScore === 5) {
+      console.log("Computer won, You lost the game :(");
+      break;
+    } else {
+      console.log(`ROUND: ${round}`);
+      playRound();
+    }
+  }
+}
