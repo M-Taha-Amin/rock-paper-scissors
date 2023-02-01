@@ -67,6 +67,15 @@ function game() {
       playRound();
     }
   }
+
+  // A conditional to let user play as many times as they want!
+  if (confirm("Do you want to play again?")) {
+    playerScore = 0;
+    computerScore = 0;
+    game();
+  } else {
+    console.log("Thanks for playing!");
+  }
 }
 
 // A variable to ask user if they want to play
