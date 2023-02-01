@@ -21,4 +21,34 @@ function playRound(playerSelection, computerSelection) {
       "Please choose a valid option: rock, paper or scissors?"
     ).toLowerCase();
   }
+
+  // A variable to store computer choice
+  computerSelection = getComputerChoice();
+
+  // Conditionals to Check the winner
+  if (playerSelection === computerSelection) {
+    console.log(
+      `Player: ${playerSelection}\nComputer: ${computerSelection}\nIt is a tie!\nPlayer Score| ${playerScore} : Computer Score| ${computerScore}`
+    );
+  } else if (
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "scissors" && computerSelection === "paper")
+  ) {
+    console.log(
+      `Player: ${playerSelection}\nComputer: ${computerSelection}\nPlayer wins, ${playerSelection} beats ${computerSelection}!`
+    );
+    playerScore++;
+    console.log(
+      `Player Score = ${playerScore} | Computer Score = ${computerScore}`
+    );
+  } else {
+    console.log(
+      `Player: ${playerSelection}\nComputer: ${computerSelection}\nPlayer lost, ${computerSelection} beats ${playerSelection}!`
+    );
+    computerScore++;
+    console.log(
+      `Player Score = ${playerScore} | Computer Score = ${computerScore}`
+    );
+  }
 }
