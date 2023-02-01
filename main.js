@@ -53,7 +53,7 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// Added a function to let user win if they win 5 rounds
+// Added a function to let user win the game if they win 5 rounds
 function game() {
   for (let round = 1; round <= Infinity; round++) {
     if (playerScore === 5) {
@@ -67,4 +67,16 @@ function game() {
       playRound();
     }
   }
+}
+
+// A variable to ask user if they want to play
+let wantToPlay = confirm(
+  "Would you like to play a game of Rock, Paper, Scissors?"
+);
+
+// Conditionals based on user input
+if (wantToPlay) {
+  game();
+} else {
+  alert("Ok, maybe next time!");
 }
